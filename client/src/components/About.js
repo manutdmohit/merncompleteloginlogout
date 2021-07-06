@@ -18,7 +18,7 @@ const About = () => {
       });
 
       const data = await res.json();
-      console.log(data);
+      // console.log(data);
       setUserData(data);
 
       if (!res.status === 200) {
@@ -33,7 +33,7 @@ const About = () => {
 
   useEffect(() => {
     callAboutPage();
-  },[]);
+  }, []);
 
   return (
     <>
@@ -60,7 +60,7 @@ const About = () => {
                 <ul className="nav nav-tabs" role="tablist">
                   <li className="nav-item">
                     <a
-                      class="nav-link active show"
+                      class="nav-link active"
                       id="home-tab"
                       data-toggle="tab"
                       href="#home"
@@ -72,7 +72,7 @@ const About = () => {
                   </li>
                   <li className="nav-item">
                     <a
-                      class="nav-link"
+                      className="nav-link"
                       id="profile-tab"
                       data-toggle="tab"
                       href="#profile"
@@ -133,21 +133,22 @@ const About = () => {
                 >
                   Blog
                 </a>
+                <br />
               </div>
             </div>
 
-            {/* right side url */}
+            {/* right side data toggle */}
             <div className="col-md-8 pl-5 about-info">
               <div className="tab-content profile-tab" id="myTabContent">
                 <div
-                  className="tab-pane fade show active"
+                  className="tab-pane fade active show"
                   id="home"
                   role="tabpanel"
                   aria-labelledby="home-tab"
                 >
                   <div className="row">
                     <div className="col-md-6">
-                      <label htmlFor="user id">User ID</label>
+                      <label>User ID</label>
                     </div>
                     <div className="col-md-6">
                       <p>{userData._id}</p>
@@ -155,7 +156,7 @@ const About = () => {
                   </div>
                   <div className="row mt-3">
                     <div className="col-md-6">
-                      <label htmlFor="name">Name</label>
+                      <label>Name</label>
                     </div>
                     <div className="col-md-6">
                       <p>{userData.name}</p>
@@ -163,7 +164,7 @@ const About = () => {
                   </div>
                   <div className="row mt-3">
                     <div className="col-md-6">
-                      <label htmlFor="email">Email</label>
+                      <label>Email</label>
                     </div>
                     <div className="col-md-6">
                       <p>{userData.email}</p>
@@ -171,7 +172,7 @@ const About = () => {
                   </div>
                   <div className="row mt-3">
                     <div className="col-md-6">
-                      <label htmlFor="phone">Phone</label>
+                      <label>Phone</label>
                     </div>
                     <div className="col-md-6">
                       <p>{userData.phone}</p>
@@ -179,7 +180,7 @@ const About = () => {
                   </div>
                   <div className="row mt-3">
                     <div className="col-md-6">
-                      <label htmlFor="professsion">Profession</label>
+                      <label>Profession</label>
                     </div>
                     <div className="col-md-6">
                       <p>{userData.work}</p>
@@ -188,7 +189,7 @@ const About = () => {
                 </div>
 
                 <div
-                  className="tab-pane fade show active"
+                  className="tab-pane fade active"
                   id="profile"
                   role="tabpanel"
                   aria-labelledby="profile-tab"
@@ -203,7 +204,7 @@ const About = () => {
                   </div>
                   <div className="row mt-3">
                     <div className="col-md-6">
-                      <label htmlFor="name">Name</label>
+                      <label>Name</label>
                     </div>
                     <div className="col-md-6">
                       <p>{userData.name}</p>
@@ -211,7 +212,7 @@ const About = () => {
                   </div>
                   <div className="row mt-3">
                     <div className="col-md-6">
-                      <label htmlFor="name">Experience</label>
+                      <label>Experience</label>
                     </div>
                     <div className="col-md-6">
                       <p>Junior</p>

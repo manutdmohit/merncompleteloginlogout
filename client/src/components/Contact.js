@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import phone from "../images/phone.png";
 
 const Contact = () => {
   const [userData, setUserData] = useState({
@@ -18,7 +17,7 @@ const Contact = () => {
       });
 
       const data = await res.json();
-      console.log(data);
+      // console.log(data);
       setUserData({
         ...userData,
         name: data.name,
@@ -74,46 +73,48 @@ const Contact = () => {
 
   return (
     <>
-      <div className="contact_info mt-5">
+      <div className="contact_info">
         <div className="container-fluid">
           <div className="row">
-            <div className="col-lg-10 offset-lg-1 d-flex justify-content-between">
-              {/* phonenumber */}
-              <div className="contact_info_item d-flex justify-content-start align-items-center">
-                <img src={phone} alt="phone" id="contact_img" />
-                <div className="contact_info_content">
-                  <div className="contact_info_title">Phone</div>
-                  <div className="contact_info_text">+977 9868 55 1045</div>
-                </div>
-              </div>
-
-              {/* email */}
-
-              <div className="contact_info_item d-flex justify-content-start align-items-center">
-                <img
-                  src="https://img.icons8.com/bubbles/50/000000/email--v1.png"
-                  alt="email"
-                  id="contact_img"
-                />
-                <div className="contact_info_content">
-                  <div className="contact_info_title">Email</div>
-                  <div className="contact_info_text" id="contact_img">
-                    saudmohit@gmail.com
+            <div className="col-lg-10 offset-lg-1">
+              <div className="contact_info_container d-flex flex-lg-row flex-column justify-content-between align-items-between">
+                <div className="contact_info_item d-flex flex-row align-items-center justify-content-start">
+                  <div className="contact_info_image">
+                    <img
+                      src="https://img.icons8.com/office/24/000000/iphone.png"
+                      alt=""
+                    />
+                  </div>
+                  <div className="contact_info_content">
+                    <div className="contact_info_title">Phone</div>
+                    <div className="contact_info_text">+977 9868 55 1045</div>
                   </div>
                 </div>
-              </div>
-
-              {/* Address */}
-
-              <div className="contact_info_item d-flex justify-content-start align-items-center">
-                <img
-                  src="https://img.icons8.com/cute-clipart/64/000000/address.png"
-                  alt="address"
-                  id="contact_img"
-                />
-                <div className="contact_info_content">
-                  <div className="contact_info_title">Address</div>
-                  <div className="contact_info_text">Nepal</div>
+                <div className="contact_info_item d-flex flex-row align-items-center justify-content-start">
+                  <div className="contact_info_image">
+                    <img
+                      src="https://img.icons8.com/ultraviolet/24/000000/filled-message.png"
+                      alt=""
+                    />
+                  </div>
+                  <div className="contact_info_content">
+                    <div className="contact_info_title">Email</div>
+                    <div className="contact_info_text">saudmohit@gmail.com</div>
+                  </div>
+                </div>
+                <div className="contact_info_item d-flex flex-row align-items-center justify-content-start">
+                  <div className="contact_info_image">
+                    <img
+                      src="https://img.icons8.com/ultraviolet/24/000000/map-marker.png"
+                      alt=""
+                    />
+                  </div>
+                  <div className="contact_info_content">
+                    <div className="contact_info_title">Address</div>
+                    <div className="contact_info_text">
+                      Tikapur-Kailali, Nepal
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -123,65 +124,60 @@ const Contact = () => {
 
       {/* contact us form */}
 
-      <div className="contact_form my-4">
+      <div className="contact_form">
         <div className="container">
           <div className="row">
             <div className="col-lg-10 offset-lg-1">
               <div className="contact_form_container py-5">
-                <div className="contact_form_title">Get in Touch</div>
+                <div className="contact_form_title">Get in Touch </div>
                 <form method="POST" id="contact_form">
-                  <div className="contact_form_name d-flex justify-content-between align-items-between my-3">
+                  <div className="contact_form_inputs d-flex flex-md-row flex-column justify-content-between align-items-between">
                     <input
                       type="text"
                       id="contact_form_name"
+                      className="contact_form_name input_field"
                       name="name"
-                      className="contact_form_name"
                       onChange={handleInputs}
-                      placeholder="Your Name"
+                      placeholder="Your name"
+                      required=""
                       value={userData.name}
-                      required="true"
                     />
-                    <div className="contact_form_email">
-                      <input
-                        type="email"
-                        id="contact_form_email"
-                        name="email"
-                        className="contact_form_email"
-                        onChange={handleInputs}
-                        placeholder="Your Email"
-                        value={userData.email}
-                        required="true"
-                      />
-                    </div>
-                    <div className="contact_form_phone">
-                      <input
-                        type="number"
-                        id="contact_form_phone"
-                        name="phone"
-                        className="contact_form_phone"
-                        onChange={handleInputs}
-                        placeholder="Your Phone"
-                        value={userData.phone}
-                        required="true"
-                      />
-                    </div>
-                  </div>
-                  <div className="message mt-5">
-                    <textarea
-                      name="message"
-                      id="message"
-                      value={userData.message}
+                    <input
+                      type="email"
+                      id="contact_form_email"
+                      className="contact_form_email input_field"
+                      name="email"
                       onChange={handleInputs}
+                      placeholder="Your Email"
+                      required=""
+                      value={userData.email}
+                    />
+                    <input
+                      type="number"
+                      id="contact_form_phone"
+                      className="contact_form_phone input_field"
+                      name="phone"
+                      placeholder="Your Phone Number"
+                      onChange={handleInputs}
+                      value={userData.phone}
+                      required
+                    />
+                  </div>
+                  <div className="contact_form_text mt-5">
+                    <textarea
+                      className="text_field contact_form_message"
+                      name="message"
                       placeholder="Message"
                       cols="30"
                       rows="10"
+                      onChange={handleInputs}dd
+                      value={userData.message}
                     ></textarea>
                   </div>
-
-                  <div className="contact_form_button mt-3">
+                  <div className="contact_form_button">
                     <button
                       type="submit"
-                      className="btn btn-primary button_contact"
+                      className="btn btn-primary"
                       onClick={contactForm}
                     >
                       Send Message

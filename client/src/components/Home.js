@@ -13,7 +13,7 @@ const Home = () => {
       });
 
       const data = await res.json();
-      console.log(data);
+      // console.log(data);
       setUser(data.name);
       setShow(true);
     } catch (error) {
@@ -27,16 +27,17 @@ const Home = () => {
 
   return (
     <>
-      <div id="content">
-        <p className="welcome">WELCOME</p>
-        <h2>{user}</h2>
-        <h2 className="content-heading">
-          {show
-            ? "Happy, To See You Back"
-            : "The More You Code, The More You Learn"}
-        </h2>
+      <div className="home-page">
+        <div className="home-div">
+          <p className="pt-5">WELCOME</p>
+          <h1>{user}</h1>
+          <h2>
+            {show
+              ? "Happy, To See You Back"
+              : "The More You Code, The More You Learn"}
+          </h2>
+        </div>
       </div>
-      <div id="background"></div>
     </>
   );
 };

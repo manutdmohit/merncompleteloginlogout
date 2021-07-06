@@ -29,68 +29,68 @@ const Login = () => {
     if (res.status === 400 || !data) {
       alert("Invalid Credentials");
     } else {
-      dispatch({ type: "USER", payload: true  });
+      dispatch({ type: "USER", payload: true });
       alert("Login Successful");
       history.push("/");
     }
   };
 
   return (
-    <section className="signup signin">
-      <div className="rightsignup">
-        <figure>
-          <img src={loginImg} alt="signup" className="signupimage" />
-        </figure>
-        <p className="text-center mt-3 createaccount">
-          <NavLink to="/signup">Create an Account</NavLink>
-        </p>
-      </div>
-
-      <div className="leftsignup">
-        <h2>Signin</h2>
-        <div className="underline"></div>
-        <form method="POST" className="reg-form">
-          <div className="form-group">
-            <label htmlFor="email">
-              <i className="zmdi zmdi-email material-icons-name"></i>
-            </label>
-            <input
-              type="text"
-              name="email"
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Your Email"
-              autoComplete="off"
-            />
+    <section className="sign-in">
+      <div className="container mt-5">
+        <div className="signin-content">
+          <div className="signin-image">
+            <figure>
+              <img src={loginImg} alt="Login pic" />
+            </figure>
+            <NavLink className="signup-image-link" to="/signup">
+              Create an Account
+            </NavLink>
           </div>
-
-          <div className="form-group">
-            <label htmlFor="password">
-              <i className="zmdi zmdi-lock material-icons-name"></i>
-            </label>
-            <input
-              type="password"
-              name="password"
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="Password"
-              autoComplete="off"
-            />
+          <div className="signin-form">
+            <h2 className="form-title">Signin</h2>
+            <form method="POST" className="register-form" id="register-form">
+              <div className="form-group">
+                <label for="email">
+                  <i className="zmdi zmdi-email material-icons-name"></i>
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  autocomplete="off"
+                  placeholder="Your Email"
+                  onChange={(e) => setEmail(e.target.value)}
+                  value={email}
+                />
+              </div>
+              <div className="form-group">
+                <label for="password">
+                  <i className="zmdi zmdi-lock material-icons-name"></i>
+                </label>
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  autocomplete="off"
+                  placeholder="Your Password"
+                  onChange={(e) => setPassword(e.target.value)}
+                  value={password}
+                />
+              </div>
+              <div className="form-group form-button">
+                <input
+                  type="submit"
+                  name="signin"
+                  id="signin"
+                  className="form-submit"
+                  value="Signin"
+                  onClick={loginUser}
+                />
+              </div>
+            </form>
           </div>
-
-          <div className="form-group">
-            <input
-              type="submit"
-              name="signup"
-              id="signup"
-              className="btn btn-primary form-submit"
-              value="Signin"
-              onClick={loginUser}
-            />
-          </div>
-        </form>
+        </div>
       </div>
     </section>
   );

@@ -64,7 +64,7 @@ const NavBar = () => {
     }
   };
   return (
-    <section>
+    <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <NavLink className="navbar-brand" to="/">
           Hi
@@ -87,7 +87,7 @@ const NavBar = () => {
           </ul>
         </div>
       </nav>
-    </section>
+    </>
   );
 };
 
