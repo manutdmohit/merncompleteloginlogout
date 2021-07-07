@@ -44,7 +44,7 @@ const About = () => {
               <div className="profile-img">
                 <figure>
                   <img
-                    src={userData.name === "Saud Mohit" ? mohitpic : aboutpic}
+                    src={userData.name === "Mohit Saud" ? mohitpic : aboutpic}
                     alt="mohitpic"
                     id="mohitpic"
                   />
@@ -84,15 +84,6 @@ const About = () => {
                   </li>
                 </ul>
               </div>
-            </div>
-
-            <div className="col-md-2">
-              <input
-                type="submit"
-                className="profile-edit-btn"
-                name="btnAddMore"
-                value="Edit Profile"
-              />
             </div>
           </div>
 
