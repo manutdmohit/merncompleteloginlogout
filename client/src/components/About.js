@@ -60,24 +60,26 @@ const About = () => {
                 <ul className="nav nav-tabs" role="tablist">
                   <li className="nav-item">
                     <a
-                      class="nav-link active"
+                      className="nav-link"
                       id="home-tab"
                       data-toggle="tab"
                       href="#home"
                       role="tab"
-                      aria-selected="true"
+                      aria-controls="home"
+                      aria-selected="false"
                     >
                       About
                     </a>
                   </li>
                   <li className="nav-item">
                     <a
-                      className="nav-link"
+                      className="nav-link active show"
                       id="profile-tab"
                       data-toggle="tab"
                       href="#profile"
                       role="tab"
-                      aria-selected="false"
+                      aria-controls="profile"
+                      aria-selected="true"
                     >
                       Timeline
                     </a>
@@ -180,7 +182,7 @@ const About = () => {
                 </div>
 
                 <div
-                  className="tab-pane fade active"
+                  className="tab-pane fade"
                   id="profile"
                   role="tabpanel"
                   aria-labelledby="profile-tab"

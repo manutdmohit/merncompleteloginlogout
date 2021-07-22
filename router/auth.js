@@ -104,9 +104,8 @@ router.get("/about", authenticate, (req, res) => {
 
 //Get User Data for Contact Page and Home Page
 router.get("/getdata", authenticate, (req, res) => {
-  res.send(req.rootUser);
-  res.send("This is contact page");
   console.log("This is contact page");
+  res.send(req.rootUser);
   console.log("After req.rootUser");
 });
 
